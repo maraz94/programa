@@ -1,6 +1,6 @@
 import time
 import winsound
-#1
+
 numero_inicial = int(input("tiempo en segundos "))
 print(numero_inicial)
 
@@ -10,4 +10,8 @@ while numero_inicial > 0:
     print(numero_inicial)
 
 print("Librillos!")
+
+duration = 400
+freq = 100
+winsound.Beep(freq, duration)
 
