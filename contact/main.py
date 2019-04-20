@@ -1,7 +1,7 @@
 import pickle
 from tkinter import ttk
 from tkinter import *
-
+from contact import Contact
 from time import sleep
 
 ACTION_ADD_CONTACT = 1
@@ -32,11 +32,7 @@ def show_menu():
     return ask_until_option_expected(MENU_OPTIONS)
 
 def add_contact(contacts, name, phone, email):
-        contact = {
-            "name": name,
-            "phone": phone,
-            "email": email
-        }
+        contact = Contact(name, phone, email)
         contacts.append(contact)
         return contact
 
@@ -70,9 +66,9 @@ def find_contact(contacts):
     contact_counter = 0
 
     for contact in contacts:
-        if contact["name"].find(search_term) >= 0:
+        if contact.name.find(search_term) >= 0:
             found_contacts.append(contact)
-            print("{} - {}".format(contact_counter, contact["name"]))
+            print("{} - {}".format(contact_counter, contact.name))
             contact_indexes.append(contact_counter)
             contact_counter += 1
 
@@ -84,8 +80,9 @@ def find_contact(contacts):
         print("No se ha encontrado ninguno.")
         return
 
-    print("\nInformación sobre {}\n".format(found_contacts[contact_index]["name"]))
-    print("Nombre: {name}, Telefono: {phone}, Email: {email}\n\n".format(**found_contacts[contact_index]))
+    print("\nInformación sobre {}\n".format(found_contacts[contact_index].name))
+    contact = found_contacts[contact_index]
+    contact.print_data
 sleep(2)
 
 
