@@ -1,45 +1,35 @@
-from pokemon import Squirtle, Charmander, Bulbasur, Pikachu
-"""
+from pokemon.basepokemon import Charmander, Bulbasaur, Pikachu, Squirtle
 
-
-    if ataque_elegido == "CHISPAZO":
-        vida_enemigo -= 10
-    elif ataque_elegido == "BOLA VOLTIO":
-        vida_enemigo -= 12
-
-    print("La vida del {} ahora es de {}".format(nombre_pokemon, vida_enemigo))
-
-    print("{} te hace {} puntos de daño".format(nombre_pokemon, ataque_pokemon))
-    vida_pikachu -= ataque_pokemon
-
-    print("La vida de tu Pikachu ahora es de {}".format(vida_pikachu))
-
-if vida_enemigo <= 0:
-    print("¡Has ganado!")
-if vida_pikachu <= 0:
-    print("Has perdido")
-
-print("El Combate ha terminado")
-"""
 def choose_pokemon():
-    choosen_pokemon = input("¿Quien será tu adversario? (Squirtle / Charmander / Bulbasur / : ").upper()
+    chosen_pokemon = input("¿Contra qué Pokemon quieres combatir? (Squirtle / Charmander / Bulbasaur): ")
 
-    if choosen_pokemon == "SQUIRTLE":
+    if chosen_pokemon == "Squirtle":
         return Squirtle()
-    elif choosen_pokemon == "CHARMANDER":
+    elif chosen_pokemon == "Charmander":
         return Charmander()
-    elif choosen_pokemon == "BULBASUR":
-        return Bulbasur()
-def main():
-    enemy = choose_pokemon()
-    pikachu = Pikachu()
+    elif chosen_pokemon == "Bulbasaur":
+        return Bulbasaur()
 
-    while enemy.vida > 0 and pikachu.vida > 0:
-        ataque_elegido = input("¿Que ataque quieres usar? (Chispazo / Bola Voltio").upper()
-        if ataque_elegido == "CHISPAZO":
-            vida_enemigo -= 10
-        elif ataque_elegido == "BOLA VOLTIO":
-            vida_enemigo -= 12
+
+def main():
+    pikachu = Pikachu()
+    enemy = choose_pokemon()
+
+    while not enemy.is_defeated() and not pikachu.is_defeated():
+        chosen_attack = input("¿Qué ataque vamos a usar? (Chispazo / Bola voltio)")
+        pikachu.fight(enemy, chosen_attack)
+
+        enemy.show_health_points()
+        enemy.fight(pikachu)
+
+        pikachu.show_health_points()
+
+    if enemy.is_defeated():
+        print("¡Has ganado!")
+
+    if pikachu.is_defeated():
+        print("¡Has perdido!")
+
 
 if __name__ == "__main__":
     main()
