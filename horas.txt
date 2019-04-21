@@ -1,0 +1,13 @@
+Se ha hecho de noche
+la hora actual es 2019-04-21 01:12:02.335910.
+la hora actual es 2019-04-21 02:12:02.335910.
+la hora actual es 2019-04-21 03:12:02.335910.
+la hora actual es 2019-04-21 04:12:02.335910.
+la hora actual es 2019-04-21 05:12:02.335910.
+la hora actual es 2019-04-21 06:12:02.335910.
+la hora actual es 2019-04-21 07:12:02.335910.
+Se ha hecho de Día
+la hora actual es 2019-04-21 08:12:02.335910.
+la hora actual es 2019-04-21 09:12:02.335910.
+la hora actual es 2019-04-21 10:12:02.335910.
+la hora actual es 2019-04-21 11:12:02.335910.

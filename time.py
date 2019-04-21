@@ -1,8 +1,8 @@
 from time import sleep
 import datetime
 
-NIGHT_STARTS = 19
-DAY_STARTS = 8
+NIGHT_STARTS = 22
+DAY_STARTS = 7
 HOUR_DURATION = 1
 
 
