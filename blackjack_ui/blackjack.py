@@ -3,7 +3,7 @@ from tkinter import Tk, ttk
 from tkinter import *
 from tkinter.messagebox import showinfo
 
-from PIL import ImageTk, Image   #SI FALTA PIL INSTALLAR PILLOW
+from PIL import ImageTk, Image   #if missing PIL import and install Pillow
 
 class Player:
     def __init__(self):
@@ -24,7 +24,7 @@ class Card:
         13: "king"
     }
 
-    card_image_path = "./assets/png/"
+    card_image_path = "./assets/png/" #assets from: https://github.com/hayeah/playing-cards-assets
 
     def __init__(self, number, suit):
         self.number = number
